@@ -51,7 +51,7 @@ button {
 <body>
 
 <div class="box">
-<h2>Login of myyy</h2>
+<h2>Login Page</h2>
 
 <form action="LoginServlet" method="post">
     <input type="text" name="username" placeholder="Username" required>
