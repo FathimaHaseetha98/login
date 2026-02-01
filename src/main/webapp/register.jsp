@@ -1,0 +1,86 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+
+<style>
+body {
+    background: #2c2c54;
+    font-family: Arial;
+}
+.box {
+    width: 300px;
+    margin: 150px auto;
+    padding: 25px;
+    background: #40407a;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+button {
+    background: #706fd3;
+    color: white;
+}
+.error {
+    color: #ffb3b3;
+}
+.success {
+    color: #b3ffb3;
+}
+.link {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.link a {
+    color: #dcdcff;
+    text-decoration: none;
+}
+.link a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Register</h2>
+
+<form action="RegisterServlet" method="post">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Register</button>
+</form>
+
+<%
+    if (request.getParameter("error") != null) {
+%>
+    <div class="error">Username already exists</div>
+<%
+    }
+    if (request.getParameter("success") != null) {
+%>
+    <div class="success">Registration successful!</div>
+<%
+    }
+%>
+
+<!-- ✅ Login link -->
+<div class="link">
+    Already have an account? <a href="login.jsp">Login</a>
+</div>
+
+</div>
+
+</body>
+</html>
